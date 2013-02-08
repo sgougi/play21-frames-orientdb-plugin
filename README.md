@@ -27,7 +27,8 @@ Dependencies
 
 * OrientDB 1.3.0
 * [TinkerPop BluePrints 2.3.0-SNAPSHOT modified by me](https://github.com/sgougi/blueprints/tree/master/blueprints-orient-graph)
-  It seems to me that the original BluePrints of OrientDB is not thread safe. 
+  
+  * It seems to me that the original BluePrints of OrientDB is not thread safe. 
 
 Install
 ====
