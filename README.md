@@ -95,7 +95,7 @@ The com.wingnest.play2.frames.[OrientDB] (app/com/wingnest/play2/frames/OrientDB
 * OrientDB.fromORIDToCustomId()
 * OrientDB.setCustomIdHandler()
 
-## Extended Annotatins 
+## Extended Annotations 
 
 ### For Models
 ####[@Id](https://github.com/sgougi/play21-frames-module/blob/master/app/com/wingnest/play2/frames/annotations/Id.java)
