@@ -111,7 +111,7 @@ Defines one attribute as id attribute.
       }
       
 ####[@CustomId](app/com/wingnest/play2/frames/annotations/CustomId.java)
-Defines one attribute as custom id attribute.
+Defines one attribute as custom id attribute. (ref:([src](app/com/wingnest/play2/frames/plugin/orientdb/CustomIdManager.java)))
 
  ex:
 
