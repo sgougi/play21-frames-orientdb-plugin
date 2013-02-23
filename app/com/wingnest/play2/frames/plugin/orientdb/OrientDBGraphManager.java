@@ -23,6 +23,7 @@ import java.io.InputStream;
 
 import play.Play;
 
+import com.orientechnologies.orient.core.Orient;
 import com.orientechnologies.orient.server.OServer;
 import com.orientechnologies.orient.server.OServerMain;
 import com.tinkerpop.blueprints.Graph;
@@ -88,11 +89,6 @@ public class OrientDBGraphManager extends AbstractGraphManager {
 				server = OServerMain.create();
 				server.startup(is);
 				FramesLogger.info("OrientDB of embedded mode was started");
-				Runtime.getRuntime().addShutdownHook(new Thread() {
-					public void run() {
-						serverShutdown();
-					}
-				});
 			}
 			/* web server */{
 				final String orientDBWwwPath = getConfigString(CONF_ORIENT_DB_WWW_PATH, null);
@@ -124,8 +120,19 @@ public class OrientDBGraphManager extends AbstractGraphManager {
 		}
 	}
 
+	@Override
+	public void onShutdown() {
+		serverShutdown();
+		if(graph != null)
+			graph.shutdown();
+		final Orient orient = Orient.instance();
+		if(orient != null)
+			 orient.shutdown();
+	}
+	
 	private void serverShutdown() {
 		if ( server != null ) {
+			FramesLogger.info("WWW Server was just shutdowned");
 			server.shutdown();
 			server = null;
 		}
