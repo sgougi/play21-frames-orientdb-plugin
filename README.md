@@ -19,7 +19,7 @@ Features
 Requirements
 =========
 
-* Java 5 or 6
+* Java 5 or 6, 7
 * Play 2.1.0
 
 Dependencies
