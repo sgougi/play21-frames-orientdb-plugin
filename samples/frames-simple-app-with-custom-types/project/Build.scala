@@ -4,7 +4,7 @@ import play.Project._
 
 object ApplicationBuild extends Build {
 
-    val appName         = "play21-frames-simple-app-with-custom-types"
+    val appName         = "play21-frames-orientdb-simple-app-with-custom-types"
     val appVersion      = "1.0-SNAPSHOT"
 
     val appDependencies = Seq(

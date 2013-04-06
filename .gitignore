@@ -9,8 +9,8 @@ dist
 /.idea
 /*.iml
 /out
-/.idea_modules
-/.classpath
-/.project
-/RUNNING_PID
-/.settings
+.idea_modules
+.classpath
+.project
+RUNNING_PID
+.settings
