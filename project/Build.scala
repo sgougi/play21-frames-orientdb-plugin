@@ -5,13 +5,13 @@ import play.Project._
 object ApplicationBuild extends Build {
 
   val appName         = "play21-frames-orientdb-plugin"
-  val appVersion      = "1.0-SNAPSHOT"
+  val appVersion      = "2.2.0-1.0"
   val orientDBVersion = "1.3.0"
   val tinkerpopVersion = "2.2.0"  
 //  val orientDBVersion = "1.4.0-SNAPSHOT"
 
   val appDependencies = Seq(  
-    "com.wingnest.play2" % "play21-frames-module_2.10" % "1.0-SNAPSHOT",
+    "com.wingnest.play2" % "play21-frames-module_2.10" % "2.2.0-1.0",
     
     "com.orientechnologies" % "orientdb-core" % {orientDBVersion},
  	"com.orientechnologies" % "orient-commons" % {orientDBVersion},
