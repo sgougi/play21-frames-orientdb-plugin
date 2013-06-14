@@ -22,6 +22,6 @@ public interface ConfigConsts {
 	static final String CONF_ORIENT_DB_PASSWORD = "frames.orientdb.password";
 	static final String CONF_ORIENT_DB_CONFIG_FILE = "frames.orientdb.config.file";
 	static final String CONF_ORIENT_DB_WWW_PATH = "frames.orientdb.www.path";
-	static final String CONF_ORIENT_DB_USE_CUSTOM_TYPES = "frames.orientdb.useCustomTypes";
+//	static final String CONF_ORIENT_DB_USE_CUSTOM_TYPES = "frames.orientdb.useCustomTypes";
 	
 }

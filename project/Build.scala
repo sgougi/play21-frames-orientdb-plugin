@@ -5,29 +5,27 @@ import play.Project._
 object ApplicationBuild extends Build {
 
   val appName         = "play21-frames-orientdb-plugin"
-  val appVersion      = "1.0-module-2.2.0-1.0"
-  val orientDBVersion = "1.3.0"
-  val tinkerpopVersion = "2.2.0"  
-//  val orientDBVersion = "1.4.0-SNAPSHOT"
+  val appVersion      = "1.1.1-module-2.4.0-SNAPSHOT-1.0"
+  val orientDBVersion = "1.4.1-SNAPSHOT"
+  val tinkerpopVersion = "2.4.0-SNAPSHOT"  
 
   val appDependencies = Seq(  
-    "com.wingnest.play2" % "play21-frames-module_2.10" % "2.2.0-1.0",
-    
+    "com.wingnest.play2" % "play21-frames-module_2.10" % "2.4.0-SNAPSHOT-1.0",
     "com.orientechnologies" % "orientdb-core" % {orientDBVersion},
  	"com.orientechnologies" % "orient-commons" % {orientDBVersion},
     "com.orientechnologies" % "orientdb-client" % {orientDBVersion},
     "com.orientechnologies" % "orientdb-nativeos" % {orientDBVersion},
-    "com.orientechnologies" % "orientdb-server" % {orientDBVersion},
+    "com.orientechnologies" % "orientdb-server" % {orientDBVersion},    
     "com.orientechnologies" % "orientdb-object" % {orientDBVersion},
-    "com.orientechnologies" % "orientdb-enterprise" % {orientDBVersion},
-    "com.orientechnologies" % "orientdb-distributed" % {orientDBVersion},
+    "com.orientechnologies" % "orientdb-enterprise" % {orientDBVersion}	,
+    "com.orientechnologies" % "orientdb-distributed" % {orientDBVersion}, 
     
-    "com.tinkerpop.blueprints" % "blueprints-core" % {tinkerpopVersion},
-    "com.tinkerpop.blueprints" % "blueprints-test" % {tinkerpopVersion},
-    "com.tinkerpop" % "frames" % {tinkerpopVersion},
-//    "com.tinkerpop.blueprints" % "blueprints-orient-graph" % {tinkerpopVersion}, 
+//    "com.tinkerpop.blueprints" % "blueprints-core" % {tinkerpopVersion},
+//    "com.tinkerpop.blueprints" % "blueprints-test" % {tinkerpopVersion},
+//    "com.tinkerpop" % "frames" % {tinkerpopVersion},
+    "com.tinkerpop.blueprints" % "blueprints-orient-graph" % {tinkerpopVersion}, 
                     
-    "com.hazelcast" % "hazelcast" % "2.1.2",
+//    "com.hazelcast" % "hazelcast" % "2.1.2",
 //    "org.javassist" % "javassist" % "3.17.1-GA",
 //	"commons-collections" % "commons-collections" % "3.2.1",
     javaCore
@@ -36,7 +34,8 @@ object ApplicationBuild extends Build {
   val main = play.Project(appName, appVersion, appDependencies).settings(
     publishArtifact in(Compile, packageDoc) := false,
     organization := "com.wingnest.play2",
-    resolvers += "Sonatype OSS Snapshots" at "https://oss.sonatype.org/content/repositories/public/"
+    resolvers += "Sonatype OSS Snapshot" at "https://oss.sonatype.org/content/repositories/snapshots",    
+    resolvers += "Sonatype" at "https://oss.sonatype.org/content/repositories/public/"    
   )
 
 }

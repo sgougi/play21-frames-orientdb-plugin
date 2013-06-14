@@ -5,7 +5,8 @@ import com.wingnest.play2.frames.annotations.*;
 
 public interface EdgeBase extends EdgeFrameWithId {
 
-	@CustomId
+	//@CustomId
+	@Id
 	public Object getCustomId();
 	
 }

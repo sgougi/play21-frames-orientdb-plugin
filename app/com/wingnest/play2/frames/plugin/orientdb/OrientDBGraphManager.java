@@ -15,7 +15,11 @@
  */
 package com.wingnest.play2.frames.plugin.orientdb;
 
-import static com.wingnest.play2.frames.plugin.orientdb.ConfigConsts.*;
+import static com.wingnest.play2.frames.plugin.orientdb.ConfigConsts.CONF_ORIENT_DB_CONFIG_FILE;
+import static com.wingnest.play2.frames.plugin.orientdb.ConfigConsts.CONF_ORIENT_DB_PASSWORD;
+import static com.wingnest.play2.frames.plugin.orientdb.ConfigConsts.CONF_ORIENT_DB_URL;
+import static com.wingnest.play2.frames.plugin.orientdb.ConfigConsts.CONF_ORIENT_DB_USER;
+import static com.wingnest.play2.frames.plugin.orientdb.ConfigConsts.CONF_ORIENT_DB_WWW_PATH;
 
 import java.io.File;
 import java.io.FileInputStream;
@@ -24,6 +28,9 @@ import java.io.InputStream;
 import play.Play;
 
 import com.orientechnologies.orient.core.Orient;
+import com.orientechnologies.orient.core.config.OGlobalConfiguration;
+import com.orientechnologies.orient.core.db.ODatabaseRecordThreadLocal;
+import com.orientechnologies.orient.core.db.graph.OGraphDatabase;
 import com.orientechnologies.orient.server.OServer;
 import com.orientechnologies.orient.server.OServerMain;
 import com.tinkerpop.blueprints.Graph;
@@ -31,28 +38,25 @@ import com.tinkerpop.blueprints.TransactionalGraph.Conclusion;
 import com.tinkerpop.blueprints.impls.orient.OrientGraph;
 import com.wingnest.play2.frames.plugin.FramesLogger;
 import com.wingnest.play2.frames.plugin.exceptions.FramesUnexpectedException;
-import com.wingnest.play2.frames.plugin.graphManager.*;
+import com.wingnest.play2.frames.plugin.graphManager.AbstractGraphManager;
 
 public class OrientDBGraphManager extends AbstractGraphManager {
 
 	private static final String ORIENTDB_WWW_PATH = "orientdb.www.path";
 
 	private OServer server;
-	private boolean bUseCustomTypes = false;
 	final private OrientGraph graph;
 
 	public OrientDBGraphManager() {
+		OGlobalConfiguration.CACHE_LEVEL1_ENABLED.setValue(false);				
 		graph = createGraph();
-		String useCustomTypes = getConfigString(CONF_ORIENT_DB_USE_CUSTOM_TYPES, "false");
-		if(useCustomTypes.equalsIgnoreCase("true"))
-			bUseCustomTypes = true;			
 	}
 
 	private OrientGraph createGraph() {
 		final String url = getConfigString(CONF_ORIENT_DB_URL, "memory:temp");
 		if ( !url.startsWith("remote") )
 			runEmbeddedOrientDB();
-		return new OrientGraph(url, getConfigString(CONF_ORIENT_DB_USER, "admin"), getConfigString(CONF_ORIENT_DB_PASSWORD, "admin"));
+		return new OrientGraph(url);
 	}
 
 	@SuppressWarnings("unchecked")
@@ -63,15 +67,26 @@ public class OrientDBGraphManager extends AbstractGraphManager {
 
 	@Override
 	public void startTransaction() {
-		((OrientGraph)graph).getRawGraph().setUseCustomTypes(bUseCustomTypes);
+		ODatabaseRecordThreadLocal.INSTANCE.set( ((OrientGraph)graph).getRawGraph() );
+	}
+	
+	@Override
+	public void stopTransaction(Conclusion conclusion) {
+		graph.stopTransaction(conclusion);
+	}	
+	
+	@Override
+	public void commit() {
+		graph.commit();
 	}
 
 	@Override
-	public void stopTransaction(final Conclusion conclusion) {
-		graph.stopTransaction(conclusion);
-	}
+	public void rollback() {
+		graph.rollback();
+	}		
 
 	private void runEmbeddedOrientDB() {
+		if ( server != null ) return;
 		FileInputStream fis = null;
 		try {
 			/* orient server */{

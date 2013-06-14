@@ -10,6 +10,8 @@ Features
 
 * Supports for both the embedded OrientDB and remote OrientDB
 
+* Supports the auto-reloading
+
 * Enables to customize the format of Model Id ([src](app/com/wingnest/play2/frames/plugin/orientdb/CustomIdManager.java))
 
 * On only embedded OrienDB:
@@ -25,10 +27,7 @@ Requirements
 Dependencies
 ============
 
-* OrientDB 1.3.0
-* [TinkerPop BluePrints 2.3.0-SNAPSHOT modified by me](https://github.com/sgougi/blueprints/tree/master/blueprints-orient-graph)
-  
-  * It seems to me that the original BluePrints of OrientDB is not thread safe. 
+* OrientDB 1.4.1-SNAPSHOT
 
 Install
 ====
@@ -39,7 +38,7 @@ Install
 
          % git clone git@github.com:sgougi/play21-frames-module.git
          % cd play21-frames-module
-         % git checkout 2.2.0-1.0
+         % git checkout 2.4.0-SNAPSHOT-1.0
   
   3)  Publishing the Frames Module to your local repository
            

@@ -4,6 +4,8 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
+import play.Logger;
+
 import models.formdata.*;
 import models.vertices.Log;
 
@@ -44,6 +46,7 @@ public class LogService {
 	}
 
 	public Log findById(Object logId) {
+		Logger.debug(String.format("%s", logId.toString()));
 		FramedGraph<Graph> fg = GraphDB.createFramedGraph();
 		Log log = fg.getVertex(logId, Log.class);
 		return log;
@@ -52,9 +55,7 @@ public class LogService {
 	@SuppressWarnings("rawtypes")
 	public Iterable<Log> getLogs() {
 		FramedGraph<Graph> graph = GraphDB.createFramedGraph();
-
 		Iterable<Vertex> logs = graph.getVertices("className", Log.class.getSimpleName());
-
 		if ( true ) {
 			Pipe<Vertex, Vertex> p = Gremlin.compile("_().order({ it.b.createdDate <=> it.a.createdDate })");
 			p.setStarts(logs);
@@ -84,6 +85,7 @@ public class LogService {
 			}).toList();
 			return graph.frameVertices(vertices, Log.class);
 		}
+
 	}
 
 	//
