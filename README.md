@@ -10,7 +10,7 @@ Features
 
 * Supports for both the embedded OrientDB and remote OrientDB
 
-* Supports the auto-reloading
+* Supports auto-reloading
 
 * Enables to customize the format of Model Id ([src](app/com/wingnest/play2/frames/plugin/orientdb/CustomIdManager.java))
 
