@@ -5,7 +5,7 @@ import play.Project._
 object ApplicationBuild extends Build {
 
   val appName         = "play21-frames-orientdb-plugin"
-  val appVersion      = "1.1.1-module-2.4.0-SNAPSHOT-1.0"
+  val appVersion      = "1.1.2-module-2.4.0-SNAPSHOT-1.0"
   val orientDBVersion = "1.4.1-SNAPSHOT"
   val tinkerpopVersion = "2.4.0-SNAPSHOT"  
 
