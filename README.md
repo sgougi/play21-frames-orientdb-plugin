@@ -27,7 +27,7 @@ Requirements
 Dependencies
 ============
 
-* OrientDB 1.4.1-SNAPSHOT
+* OrientDB 1.4.1
 
 Install
 ====

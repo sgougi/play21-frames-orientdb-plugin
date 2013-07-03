@@ -5,8 +5,8 @@ import play.Project._
 object ApplicationBuild extends Build {
 
   val appName         = "play21-frames-orientdb-plugin"
-  val appVersion      = "1.1.2-module-2.4.0-SNAPSHOT-1.0"
-  val orientDBVersion = "1.4.1-SNAPSHOT"
+  val appVersion      = "1.1.3-module-2.4.0-SNAPSHOT-1.0"
+  val orientDBVersion = "1.4.1"
   val tinkerpopVersion = "2.4.0-SNAPSHOT"  
 
   val appDependencies = Seq(  
@@ -23,19 +23,22 @@ object ApplicationBuild extends Build {
 //    "com.tinkerpop.blueprints" % "blueprints-core" % {tinkerpopVersion},
 //    "com.tinkerpop.blueprints" % "blueprints-test" % {tinkerpopVersion},
 //    "com.tinkerpop" % "frames" % {tinkerpopVersion},
-    "com.tinkerpop.blueprints" % "blueprints-orient-graph" % {tinkerpopVersion}, 
+    "com.tinkerpop.blueprints" % "blueprints-orient-graph" % {tinkerpopVersion} excludeAll(
+          ExclusionRule(organization = "com.orientechnologies")
+      ), 
                     
 //    "com.hazelcast" % "hazelcast" % "2.1.2",
 //    "org.javassist" % "javassist" % "3.17.1-GA",
 //	"commons-collections" % "commons-collections" % "3.2.1",
     javaCore
   )
+
     
   val main = play.Project(appName, appVersion, appDependencies).settings(
     publishArtifact in(Compile, packageDoc) := false,
     organization := "com.wingnest.play2",
     resolvers += "Sonatype OSS Snapshot" at "https://oss.sonatype.org/content/repositories/snapshots",    
-    resolvers += "Sonatype" at "https://oss.sonatype.org/content/repositories/public/"    
+    resolvers += "Sonatype" at "https://oss.sonatype.org/content/repositories/public/"
   )
 
 }
