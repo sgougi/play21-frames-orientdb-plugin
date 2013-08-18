@@ -5,12 +5,12 @@ import play.Project._
 object ApplicationBuild extends Build {
 
   val appName         = "play21-frames-orientdb-plugin"
-  val appVersion      = "1.1.4-module-2.4.0-SNAPSHOT-1.1"
-  val orientDBVersion = "1.4.1"
-  val tinkerpopVersion = "2.4.0-SNAPSHOT"  
+  val appVersion      = "1.1.5-module-2.4.0-1.0"
+  val orientDBVersion = "1.5.0"
+  val tinkerpopVersion = "2.4.0"  
 
   val appDependencies = Seq(  
-    "com.wingnest.play2" % "play21-frames-module_2.10" % "2.4.0-SNAPSHOT-1.1",
+    "com.wingnest.play2" % "play21-frames-module_2.10" % "2.4.0-1.0",
     "com.orientechnologies" % "orientdb-core" % {orientDBVersion},
  	"com.orientechnologies" % "orient-commons" % {orientDBVersion},
     "com.orientechnologies" % "orientdb-client" % {orientDBVersion},
@@ -26,8 +26,8 @@ object ApplicationBuild extends Build {
     "com.tinkerpop.blueprints" % "blueprints-orient-graph" % {tinkerpopVersion} excludeAll(
           ExclusionRule(organization = "com.orientechnologies")
       ), 
-                    
-//    "com.hazelcast" % "hazelcast" % "2.1.2",
+
+	"com.hazelcast" % "hazelcast" % "3.0.1-SNAPSHOT",      
 //    "org.javassist" % "javassist" % "3.17.1-GA",
 //	"commons-collections" % "commons-collections" % "3.2.1",
     javaCore
