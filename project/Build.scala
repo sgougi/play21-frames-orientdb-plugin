@@ -5,7 +5,7 @@ import play.Project._
 object ApplicationBuild extends Build {
 
   val appName         = "play21-frames-orientdb-plugin"
-  val appVersion      = "1.1.5-module-2.4.0-1.0"
+  val appVersion      = "1.1.6-module-2.4.0-1.0"
   val orientDBVersion = "1.5.0"
   val tinkerpopVersion = "2.4.0"  
 
@@ -27,7 +27,7 @@ object ApplicationBuild extends Build {
           ExclusionRule(organization = "com.orientechnologies")
       ), 
 
-	"com.hazelcast" % "hazelcast" % "3.0.1-SNAPSHOT",      
+	"com.hazelcast" % "hazelcast" % "3.0",      
 //    "org.javassist" % "javassist" % "3.17.1-GA",
 //	"commons-collections" % "commons-collections" % "3.2.1",
     javaCore
