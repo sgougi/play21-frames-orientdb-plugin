@@ -22,23 +22,23 @@ Requirements
 =========
 
 * Java 5 or 6, 7
-* Play 2.1.3
+* Play 2.2
 
 Dependencies
 ============
 
-* OrientDB 1.5.0
+* OrientDB 1.5.1
 
 Install
 ====
 
-  1)  Install Play framework 2.1.3
+  1)  Install Play framework 2.2
 
   2)  Executing the command for installing the [TinkerPop Frames Module](http://goo.gl/0g43T) 
 
          % git clone git@github.com:sgougi/play21-frames-module.git
          % cd play21-frames-module
-         % git checkout 2.4.0-1.0
+         % git checkout 2.4.1
   
   3)  Publishing the Frames Module to your local repository
            

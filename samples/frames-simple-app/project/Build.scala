@@ -6,12 +6,12 @@ import play.Project._
 object ApplicationBuild extends Build {
 
   val appName         = "play21-frames-orientdb-simple-app"
-  val appVersion      = "1.1.6-module-2.4.0-1.0"
+  val appVersion      = "1.1.6-module-2.4.1"
   val orientDBVersion = "1.5.0"
   val tinkerpopVersion = "2.4.0"
     
   val appDependencies = Seq(
-      "com.wingnest.play2" % "play21-frames-orientdb-plugin_2.10" % "1.1.6-module-2.4.0-1.0" excludeAll(
+      "com.wingnest.play2" % "play21-frames-orientdb-plugin_2.10" % "1.1.6-module-2.4.1" excludeAll(
           ExclusionRule(organization = "com.tinkerpop.blueprints")
       ),
 

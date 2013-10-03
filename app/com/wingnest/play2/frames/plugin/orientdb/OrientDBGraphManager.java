@@ -71,11 +71,6 @@ public class OrientDBGraphManager extends AbstractGraphManager {
 	}
 	
 	@Override
-	public void stopTransaction(Conclusion conclusion) {
-		graph.stopTransaction(conclusion);
-	}	
-	
-	@Override
 	public void commit() {
 		graph.commit();
 	}
