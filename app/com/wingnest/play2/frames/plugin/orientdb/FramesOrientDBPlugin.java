@@ -23,11 +23,12 @@ import play.Application;
 import com.tinkerpop.blueprints.Graph;
 import com.tinkerpop.frames.FramedGraph;
 import com.tinkerpop.frames.annotations.AnnotationHandler;
+import com.tinkerpop.frames.modules.MethodHandler;
 import com.wingnest.play2.frames.plugin.PluginBase;
-import com.wingnest.play2.frames.plugin.annotation_handler.CustomIdAnnotationHandler;
-import com.wingnest.play2.frames.plugin.annotation_handler.ORIDAnnotationHandler;
 import com.wingnest.play2.frames.plugin.framedgraph.DefaultFramedGraphDirector;
 import com.wingnest.play2.frames.plugin.framedgraph.FramedGraphDirector;
+import com.wingnest.play2.frames.plugin.method_handler.CustomIdMethodHandler;
+import com.wingnest.play2.frames.plugin.method_handler.ORIDMethodHandler;
 
 public class FramesOrientDBPlugin extends PluginBase {
 	
@@ -40,9 +41,9 @@ public class FramesOrientDBPlugin extends PluginBase {
 		return (FramedGraphDirector<T>)new DefaultFramedGraphDirector(new OrientDBGraphManager());
 	}
 	
-	protected void onRegisterAnnotations(final Set<AnnotationHandler<? extends Annotation>> annotationHandlers) {
-		annotationHandlers.add(new CustomIdAnnotationHandler());
-		annotationHandlers.add(new ORIDAnnotationHandler());
+	protected void onRegisterAnnotations(final Set<MethodHandler<? extends Annotation>> methodHandlers) {
+		methodHandlers.add(new CustomIdMethodHandler());
+		methodHandlers.add(new ORIDMethodHandler());
 	}	
 		
 }
