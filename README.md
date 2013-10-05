@@ -38,7 +38,7 @@ Install
 
          % git clone git@github.com:sgougi/play21-frames-module.git
          % cd play21-frames-module
-         % git checkout 2.4.1
+         % git checkout 2.4.0-1.0
   
   3)  Publishing the Frames Module to your local repository
            
