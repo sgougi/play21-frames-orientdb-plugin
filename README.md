@@ -8,15 +8,18 @@ Features
 
 * Object-Graph-Mapping by the [TinkerPop Frames](https://github.com/tinkerpop/frames/wiki)
 
-* Supports for both the embedded OrientDB and remote OrientDB
+* Support for both the embedded OrientDB and remote OrientDB
 
-* Supports for auto-reloading
+* Auto-reloading support
 
-* Enables to customize the format of Model Id ([src](app/com/wingnest/play2/frames/plugin/orientdb/CustomIdManager.java))
+* Custom vertex and edge types support <New>[sample](samples/frames-simple-app-with-custom-types)
+   * Note that Custom types, Constraints and Indexes are not yet implemented.
+    
+* Support to enable to customize the format of Model Id ([src](app/com/wingnest/play2/frames/plugin/orientdb/CustomIdManager.java))
 
 * On only embedded OrienDB:
 
-   * Enables to use the [OrientDB Studio](https://github.com/nuvolabase/orientdb/wiki/OrientDB-Studio)
+   * Support to enable to use the [OrientDB Studio](https://github.com/nuvolabase/orientdb/wiki/OrientDB-Studio)
 
 Requirements
 =========
@@ -38,7 +41,7 @@ Install
 
          % git clone git@github.com:sgougi/play21-frames-module.git
          % cd play21-frames-module
-         % git checkout 2.4.0-1.0
+         % git checkout 2.4.3
   
   3)  Publishing the Frames Module to your local repository
            
@@ -55,7 +58,7 @@ Install
          % play publish-local
 
 
-Run sample application and Usage
+Run sample application
 =======================
 
 At a command prompt, type the following commands:

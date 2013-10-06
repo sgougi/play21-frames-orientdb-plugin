@@ -29,7 +29,6 @@ public interface VertexBase extends VertexFrameWithId {
 	public void setClassName(String className);
 
 	@CustomId
-//	@Id
 	public Object getCustomId();
 
 }
