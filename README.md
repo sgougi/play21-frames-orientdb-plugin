@@ -12,7 +12,7 @@ Features
 
 * Auto-reloading support
 
-* Custom vertex and edge types support <New>[sample](samples/frames-simple-app-with-custom-types)
+* Custom vertex and edge types support [(sample)](samples/frames-simple-app-with-custom-types)
    * Note that Custom types, Constraints and Indexes are not yet implemented.
     
 * Support to enable to customize the format of Model Id ([src](app/com/wingnest/play2/frames/plugin/orientdb/CustomIdManager.java))
