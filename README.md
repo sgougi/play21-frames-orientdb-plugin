@@ -32,10 +32,10 @@ Dependencies
 
 * OrientDB 1.5.1
 
-Install
+Setup
 ====
 
-  1)  Install Play framework 2.2
+  1)  Installing Play framework 2.2
 
   2)  Executing the command for installing the [TinkerPop Frames Module](http://goo.gl/0g43T) 
 
@@ -58,7 +58,7 @@ Install
          % play publish-local
 
 
-Run sample application
+Running sample applications and usage
 =======================
 
 At a command prompt, type the following commands:
