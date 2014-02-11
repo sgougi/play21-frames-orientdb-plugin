@@ -32,8 +32,8 @@ Dependencies
 
 * OrientDB 1.5.1
 
-Install
-====
+Installing
+==========
 
   1)  Install Play framework 2.2
 
@@ -58,7 +58,7 @@ Install
          % play publish-local
 
 
-Run sample application
+Running sample application
 =======================
 
 At a command prompt, type the following commands:
