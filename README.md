@@ -25,7 +25,7 @@ Requirements
 =========
 
 * Java 5 or 6, 7
-* Play 2.2
+* Play 2.2.1
 
 Dependencies
 ============
