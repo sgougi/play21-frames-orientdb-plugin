@@ -35,13 +35,13 @@ Dependencies
 Installing
 ==========
 
-  1)  Install Play framework 2.2
+  1)  Install Play framework 2.2.1
 
   2)  Executing the command for installing the [TinkerPop Frames Module](http://goo.gl/0g43T) 
 
          % git clone git@github.com:sgougi/play21-frames-module.git
          % cd play21-frames-module
-         % git checkout 2.4.3
+         % git checkout 2.4.4
   
   3)  Publishing the Frames Module to your local repository
            
